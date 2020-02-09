@@ -96,8 +96,8 @@ function Perceptron(opts)
       result += threshold * weights[weights.length - 1];
 
       // Set the activation function to sigmoid, hardside, or a custom formula.
-      activationFunc = activationFunc || ((x) => { return Number(this.sigmoid(x) >= 0.5) });
-      //activationFunc = activationFunc || ((x) => { return this.sigmoid(x) });
+      //activationFunc = activationFunc || ((x) => { return Number(this.sigmoid(x) >= 0.5) });
+      activationFunc = activationFunc || ((x) => { return this.sigmoid(x) });
       //activationFunc = activationFunc || ((x) => { return Number(this.hardside(x) > 0) });
 
       // Finally, pass the result through an activation function to determine if the neuron fires.
