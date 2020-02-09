@@ -127,7 +127,7 @@ var print = function(msg)
 
 const logFileText = async file => 
 {
-    const response = await fetch("https://simpleverso.github.io/perceptronJS/patrones.txt")
+    const response = await fetch("https://simpleverso.github.io/perceptronJS/uploads/patrones.txt")
     const text = await response.text()
     console.log(text)
     document.getElementById('output').innerHTML += text + '<br/>';
