@@ -124,29 +124,18 @@ var print = function(msg)
   console.log(msg);
 }
 
-var LeerArchivo = function () 
+const logFileText = async file => 
 {
-  var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "/file.txt", false);
-    rawFile.onreadystatechange = function ()
-    {
-      if(rawFile.readyState === 4)
-      {
-        if(rawFile.status === 200 || rawFile.status == 0)
-        {
-          var allText = rawFile.responseText;
-          alert(allText);
-        }
-      }
-    }
-    rawFile.send(null);
+    const response = await fetch("https://simpleverso.github.io/perceptronJS/patrones.txt")
+    const text = await response.text()
+    console.log(text)
 }
 
 
 
 var or = new Perceptron();
 
-LeerArchivo();
+logFileText();
 
 or.train([0, 0], 0);
 or.train([0, 1], 1);
