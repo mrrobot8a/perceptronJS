@@ -101,7 +101,8 @@ function Perceptron(opts)
       //activationFunc = activationFunc || ((x) => { return Number(this.hardside(x) > 0) });
 
       // Finally, pass the result through an activation function to determine if the neuron fires.
-      return activationFunc ? activationFunc(result) : (net ? result : (result > 0 ? 1 : 0));
+      //return activationFunc ? activationFunc(result) : (net ? result : (result > 0 ? 1 : 0));
+      return result;
     },
     
     sigmoid: function(t) 
