@@ -124,7 +124,29 @@ var print = function(msg)
   console.log(msg);
 }
 
+var LeerArchivo = function () 
+{
+  var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", "/file.txt", false);
+    rawFile.onreadystatechange = function ()
+    {
+      if(rawFile.readyState === 4)
+      {
+        if(rawFile.status === 200 || rawFile.status == 0)
+        {
+          var allText = rawFile.responseText;
+          alert(allText);
+        }
+      }
+    }
+    rawFile.send(null);
+}
+
+
+
 var or = new Perceptron();
+
+LeerArchivo();
 
 or.train([0, 0], 0);
 or.train([0, 1], 1);
