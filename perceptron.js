@@ -145,7 +145,7 @@ or.train([1, 1, 0, 1], .5);
 
 // practice makes perfect (we hope...)
 var i = 0;
-while(i++ < 100000 && !or.retrain()) {}
+while(i++ < 1000 && !or.retrain()) {}
 
 print('Resultados');
 print(or.perceive([0, 0, 0, 1]));
