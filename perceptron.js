@@ -138,10 +138,10 @@ var or = new Perceptron();
 
 logFileText();
 
-or.train([0, 0, 0, 1], 0.3);
-or.train([0, 1, 1, 0], .9);
-or.train([1, 0, 1, 0], .2);
-or.train([1, 1, 0, 1], .5);
+or.train([0, 0, 0, 1], [.3,.5]);
+or.train([0, 1, 1, 0], [.9,.3]);
+or.train([1, 0, 1, 0], [.2,.4]);
+or.train([1, 1, 0, 1], [.5,.8]);
 
 // practice makes perfect (we hope...)
 var i = 0;
