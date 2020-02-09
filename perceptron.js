@@ -137,34 +137,34 @@ var or = new Perceptron();
 
 logFileText();
 
-or.train([0, 0], 0);
-or.train([0, 1], 1);
-or.train([1, 0], 1);
-or.train([1, 1], 0);
+or.train([0, 0, 0, 1], 0);
+or.train([0, 1, 1, 0], 1);
+or.train([1, 0, 1, 0], 1);
+or.train([1, 1, 0, 1], 0);
 
 // practice makes perfect (we hope...)
 var i = 0;
 while(i++ < 10000 && !or.retrain()) {}
 
-print('OR');
-print(or.perceive([0, 0]));
-print(or.perceive([0, 1]));
-print(or.perceive([1, 0]));
-print(or.perceive([1, 1]));
+print('Resultados');
+print(or.perceive([0, 0, 0, 1]));
+print(or.perceive([0, 1, 1, 0]));
+print(or.perceive([1, 0, 1, 0]));
+print(or.perceive([1, 1, 0, 1]));
 
-var and = new Perceptron();
+//var and = new Perceptron();
+//
+//and.train([0, 0], 0);
+//and.train([0, 1], 0);
+//and.train([1, 0], 0);
+//and.train([1, 1], 1);
 
-and.train([0, 0], 0);
-and.train([0, 1], 0);
-and.train([1, 0], 0);
-and.train([1, 1], 1);
-
-// practice makes perfect (we hope...)
-var i = 0;
-while(i++ < 10000 && !and.retrain()) {}
-
-print('AND');
-print(and.perceive([0, 0]));
-print(and.perceive([0, 1]));
-print(and.perceive([1, 0]));
-print(and.perceive([1, 1]));
+//// practice makes perfect (we hope...)
+//var i = 0;
+//while(i++ < 10000 && !and.retrain()) {}
+//
+//print('AND');
+//print(and.perceive([0, 0]));
+//print(and.perceive([0, 1]));
+//print(and.perceive([1, 0]));
+//print(and.perceive([1, 1]));
