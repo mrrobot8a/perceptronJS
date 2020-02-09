@@ -136,7 +136,8 @@ const logFileText = async file =>
 
 var or = new Perceptron();
 
-logFileText();
+var texto = logFileText();
+print(texto);
 
 or.train([0, 0, 0, 1], .5);
 or.train([0, 1, 1, 0], .3);
