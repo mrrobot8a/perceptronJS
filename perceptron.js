@@ -1,4 +1,5 @@
-function Perceptron(opts) {
+function Perceptron(opts) 
+{
   if (!opts) opts = {}
 
   var debug = 'debug' in opts ? opts.debug : false;
@@ -12,10 +13,12 @@ function Perceptron(opts) {
     : 1
 
   var learningrate;
-  if (!('learningrate' in opts)) {
+  if (!('learningrate' in opts)) 
+  {
     learningrate = 0.1
   }
-  else {
+  else 
+  {
     learningrate = opts.learningrate
   }
 
@@ -23,21 +26,26 @@ function Perceptron(opts) {
 
   var api = {
     weights: weights,
-    retrain: function() {
+    retrain: function() 
+    {
       var length = data.length
       var success = true
-      for(var i=0; i<length; i++) {
+      for(var i=0; i<length; i++) 
+      {
         var training = data.shift()
         success = api.train(training.input, training.target) && success
       }
       return success
     },
-    train: function(inputs, expected) {
-      while (weights.length < inputs.length) {
+    train: function(inputs, expected) 
+    {
+      while (weights.length < inputs.length) 
+      {
         weights.push(Math.random())
       }
       // add a bias weight for the threshold
-      if (weights.length == inputs.length) {
+      if (weights.length == inputs.length) 
+      {
         weights.push('bias' in opts ? opts.bias : 1)
       }
 
@@ -46,12 +54,15 @@ function Perceptron(opts) {
 
       if (debug) console.log('> training %s, expecting: %s got: %s', inputs, expected, result)
 
-      if (result == expected) {
+      if (result == expected) 
+      {
         return true
       }
-      else {
+      else 
+      {
         if (debug) console.log('> adjusting weights...', weights, inputs);
-        for(var i=0; i < weights.length; i++) {
+        for(var i=0; i < weights.length; i++) 
+        {
           var input = (i == inputs.length)
             ? threshold
             : inputs[i]
@@ -62,19 +73,23 @@ function Perceptron(opts) {
       }
     },
 
-    adjust: function(result, expected, input, index) {
+    adjust: function(result, expected, input, index) 
+    {
       var d = api.delta(result, expected, input, learningrate);
       weights[index] += d;
       if (isNaN(weights[index])) throw new Error('weights['+index+'] went to NaN!!')
     },
 
-    delta: function(actual, expected, input, learnrate) {
+    delta: function(actual, expected, input, learnrate) 
+    {
       return (expected - actual) * learnrate * input
     },
 
-    perceive: function(inputs, net, activationFunc) {
+    perceive: function(inputs, net, activationFunc) 
+    {
       var result = 0
-      for(var i=0; i<inputs.length; i++) {
+      for(var i=0; i<inputs.length; i++) 
+      {
         result += inputs[i] * weights[i]
       }
       
@@ -89,11 +104,13 @@ function Perceptron(opts) {
       return activationFunc ? activationFunc(result) : (net ? result : (result > 0 ? 1 : 0));
     },
     
-    sigmoid: function(t) {
+    sigmoid: function(t) 
+    {
     	return 1/(1+Math.pow(Math.E, -t));
     },
     
-    hardside: function(t) {
+    hardside: function(t) 
+    {
     	return t;
     }
   }
@@ -101,7 +118,8 @@ function Perceptron(opts) {
   return api;
 }
 
-var print = function(msg) {
+var print = function(msg) 
+{
   document.getElementById('output').innerHTML += msg + '<br/>';
   console.log(msg);
 }
@@ -111,7 +129,7 @@ var or = new Perceptron();
 or.train([0, 0], 0);
 or.train([0, 1], 1);
 or.train([1, 0], 1);
-or.train([1, 1], 1);
+or.train([1, 1], 0);
 
 // practice makes perfect (we hope...)
 var i = 0;
