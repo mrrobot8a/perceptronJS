@@ -130,14 +130,14 @@ const logFileText = async file =>
     const response = await fetch("https://simpleverso.github.io/perceptronJS/patrones.txt")
     const text = await response.text()
     console.log(text)
+    document.getElementById('output').innerHTML += text + '<br/>';
 }
 
 
 
 var or = new Perceptron();
 
-var texto = logFileText();
-print(texto);
+logFileText();
 
 or.train([0, 0, 0, 1], .5);
 or.train([0, 1, 1, 0], .3);
