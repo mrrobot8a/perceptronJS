@@ -1,6 +1,7 @@
-## Welcome to GitHub Pages
+## Perceptron implementado en Javascript
 
-You can use the [editor on GitHub](https://github.com/simpleverso/perceptronJS/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+para dar de alta los valores editar el archivo js
+Para obtener los resultados ingresar aqui: [entrar](https://simpleverso.github.io/perceptronJS/)
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
