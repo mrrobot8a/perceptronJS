@@ -158,9 +158,9 @@ const logFileText = async file =>
 var and = new Perceptron();
 
 and.train([0, 0], 0);
-and.train([0, 1], 0);
-and.train([1, 0], 0);
-and.train([1, 1], 1);
+and.train([0, 1], 1);
+and.train([1, 0], 1);
+and.train([1, 1], 0);
 
 // practice makes perfect (we hope...)
 var i = 0;
