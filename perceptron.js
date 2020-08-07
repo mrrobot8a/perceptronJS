@@ -164,7 +164,7 @@ and.train([1, 1], 0);
 
 // practice makes perfect (we hope...)
 var i = 0;
-while(i++ < 10000 && !and.retrain()) {}
+while(i++ < 1000 && !and.retrain()) {}
 
 print('AND');
 print(and.perceive([0, 0]));
