@@ -133,40 +133,41 @@ const logFileText = async file =>
     document.getElementById('output').innerHTML += text + '<br/>';
 }
 
+//____________________________________________INICIO
 
+//var or = new Perceptron();
+//print('Contenido Archivo:');
+//logFileText();
 
-var or = new Perceptron();
-print('Contenido Archivo:');
-logFileText();
+//or.train([0, 0, 0, 1], .5);
+//or.train([0, 1, 1, 0], .3);
+//or.train([1, 0, 1, 0], .4);
+//or.train([1, 1, 0, 1], .8);
 
-or.train([0, 0, 0, 1], .5);
-or.train([0, 1, 1, 0], .3);
-or.train([1, 0, 1, 0], .4);
-or.train([1, 1, 0, 1], .8);
+// practice makes perfect (we hope...)
+//var i = 0;
+//while(i++ < 1000 && !or.retrain()) {}
+
+//print('Resultados:');
+//print(or.perceive([0, 0, 0, 1]));
+//print(or.perceive([0, 1, 1, 0]));
+//print(or.perceive([1, 0, 1, 0]));
+//print(or.perceive([1, 1, 0, 1]));
+//____________________________________________FIN
+
+var and = new Perceptron();
+
+and.train([0, 0], 0);
+and.train([0, 1], 0);
+and.train([1, 0], 0);
+and.train([1, 1], 1);
 
 // practice makes perfect (we hope...)
 var i = 0;
-while(i++ < 1000 && !or.retrain()) {}
+while(i++ < 10000 && !and.retrain()) {}
 
-print('Resultados:');
-print(or.perceive([0, 0, 0, 1]));
-print(or.perceive([0, 1, 1, 0]));
-print(or.perceive([1, 0, 1, 0]));
-print(or.perceive([1, 1, 0, 1]));
-
-//var and = new Perceptron();
-//
-//and.train([0, 0], 0);
-//and.train([0, 1], 0);
-//and.train([1, 0], 0);
-//and.train([1, 1], 1);
-
-//// practice makes perfect (we hope...)
-//var i = 0;
-//while(i++ < 10000 && !and.retrain()) {}
-//
-//print('AND');
-//print(and.perceive([0, 0]));
-//print(and.perceive([0, 1]));
-//print(and.perceive([1, 0]));
-//print(and.perceive([1, 1]));
+print('AND');
+print(and.perceive([0, 0]));
+print(and.perceive([0, 1]));
+print(and.perceive([1, 0]));
+print(and.perceive([1, 1]));
