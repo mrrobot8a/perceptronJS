@@ -136,7 +136,7 @@ const logFileText = async file =>
 
 
 var or = new Perceptron();
-
+print('Contenido Archivo:');
 logFileText();
 
 or.train([0, 0, 0, 1], .5);
@@ -148,7 +148,7 @@ or.train([1, 1, 0, 1], .8);
 var i = 0;
 while(i++ < 1000 && !or.retrain()) {}
 
-print('Resultados');
+print('Resultados:');
 print(or.perceive([0, 0, 0, 1]));
 print(or.perceive([0, 1, 1, 0]));
 print(or.perceive([1, 0, 1, 0]));
